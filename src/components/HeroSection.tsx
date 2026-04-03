@@ -4,10 +4,6 @@ import { ExternalLink, Mail, ArrowDown } from "lucide-react";
 const HeroSection = () => {
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-12 relative overflow-hidden">
-      {/* Soft ambient background blobs */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 left-1/3 w-[300px] h-[300px] rounded-full bg-accent/40 blur-3xl pointer-events-none" />
-
       <div className="max-w-2xl mx-auto text-center relative z-10">
 
         {/* Profile photo with glowing ring */}
@@ -18,8 +14,10 @@ const HeroSection = () => {
           className="flex justify-center mb-8"
         >
           <div className="relative">
-            {/* Animated gradient ring */}
-            <div className="absolute inset-0 rounded-full profile-ring" />
+            {/* Rotating gradient ring — GPU-accelerated via transform */}
+            <div className="profile-ring-wrapper" aria-hidden>
+              <div className="profile-ring-inner" />
+            </div>
             <div className="relative w-36 h-36 rounded-full overflow-hidden border-4 border-background shadow-2xl">
               <img
                 src="/profile.jpg"
