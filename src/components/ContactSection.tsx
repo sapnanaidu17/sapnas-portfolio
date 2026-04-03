@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Download } from "lucide-react";
+import { Mail, Linkedin, ExternalLink } from "lucide-react";
 
 const ContactSection = () => (
   <section id="contact" className="py-24 px-6">
@@ -53,8 +53,8 @@ const ContactSection = () => (
           rel="noopener noreferrer"
           className="group text-sm font-medium px-6 py-2.5 rounded-full border border-border text-foreground hover:bg-card transition-all duration-200 flex items-center gap-1.5"
         >
-          <Download className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform" />
-          Resume
+          <ExternalLink className="w-3.5 h-3.5" />
+          View Resume
         </a>
       </motion.div>
     </div>

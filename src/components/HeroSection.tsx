@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Download, Mail, ArrowDown } from "lucide-react";
+import { ExternalLink, Mail, ArrowDown } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -88,8 +88,8 @@ const HeroSection = () => {
             rel="noopener noreferrer"
             className="group text-sm font-medium px-6 py-2.5 rounded-full border border-border text-foreground hover:bg-card transition-all duration-200 flex items-center gap-1.5"
           >
-            <Download className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform" />
-            Resume
+            <ExternalLink className="w-3.5 h-3.5" />
+            View Resume
           </a>
           <a
             href="mailto:sapnanaidu1709@gmail.com"
