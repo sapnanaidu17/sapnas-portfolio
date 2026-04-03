@@ -8,22 +8,23 @@ const certs = [
 const CertificationsSection = () => (
   <section id="certifications" className="py-24 px-6">
     <div className="max-w-2xl mx-auto">
-      <motion.h2
+      <motion.div
         initial={{ opacity: 0, y: 15 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="font-display text-3xl font-semibold text-foreground mb-8"
+        className="mb-8 flex items-center gap-3"
       >
-        Certifications
-      </motion.h2>
+        <span className="text-2xl">🏅</span>
+        <h2 className="font-display text-3xl font-semibold text-foreground">Certifications</h2>
+      </motion.div>
       <div className="space-y-4">
         {certs.map((cert, i) => (
           <motion.div
             key={cert.name}
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -15 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
+            transition={{ delay: i * 0.12 }}
             className="flex justify-between items-baseline"
           >
             <div>

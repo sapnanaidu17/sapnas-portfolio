@@ -14,27 +14,32 @@ const projects = [
 ];
 
 const ProjectsSection = () => (
-  <section id="projects" className="py-24 px-6 bg-card">
-    <div className="max-w-2xl mx-auto">
-      <motion.h2
+  <section id="projects" className="py-24 px-6 bg-card relative overflow-hidden">
+    <div className="absolute top-20 left-[5%] w-24 h-24 rounded-full bg-primary/5 blur-xl" />
+
+    <div className="max-w-2xl mx-auto relative z-10">
+      <motion.div
         initial={{ opacity: 0, y: 15 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="font-display text-3xl font-semibold text-foreground mb-10"
+        className="mb-10 flex items-center gap-3"
       >
-        Projects
-      </motion.h2>
+        <span className="text-2xl">🔬</span>
+        <h2 className="font-display text-3xl font-semibold text-foreground">Projects</h2>
+      </motion.div>
 
       <div className="space-y-8">
         {projects.map((project, i) => (
           <motion.div
             key={project.title}
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
+            transition={{ delay: i * 0.12 }}
+            whileHover={{ y: -3 }}
+            className="bg-background rounded-xl p-6 border border-border transition-shadow hover:shadow-md"
           >
-            <h3 className="font-display text-lg font-semibold text-foreground mb-2">{project.title}</h3>
+            <h3 className="font-display text-base font-semibold text-foreground mb-2">{project.title}</h3>
             <p className="text-muted-foreground text-sm leading-relaxed mb-3">{project.desc}</p>
             <div className="flex flex-wrap gap-1.5">
               {project.tags.map((tag) => (
