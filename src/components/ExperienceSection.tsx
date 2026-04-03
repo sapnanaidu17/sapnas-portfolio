@@ -25,14 +25,15 @@ const education = [
 const ExperienceSection = () => (
   <section id="experience" className="py-24 px-6 bg-card">
     <div className="max-w-2xl mx-auto">
-      <motion.h2
+      <motion.div
         initial={{ opacity: 0, y: 15 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="font-display text-3xl font-semibold text-foreground mb-10"
+        className="mb-10 flex items-center gap-3"
       >
-        Experience
-      </motion.h2>
+        <span className="text-2xl">💼</span>
+        <h2 className="font-display text-3xl font-semibold text-foreground">Experience</h2>
+      </motion.div>
 
       <div className="space-y-8 mb-16">
         {experiences.map((exp, i) => (
@@ -56,14 +57,15 @@ const ExperienceSection = () => (
         ))}
       </div>
 
-      <motion.h2
+      <motion.div
         initial={{ opacity: 0, y: 15 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="font-display text-3xl font-semibold text-foreground mb-10"
+        className="mb-10 flex items-center gap-3"
       >
-        Education
-      </motion.h2>
+        <span className="text-2xl">🎓</span>
+        <h2 className="font-display text-3xl font-semibold text-foreground">Education</h2>
+      </motion.div>
 
       <div className="space-y-4">
         {education.map((edu, i) => (
