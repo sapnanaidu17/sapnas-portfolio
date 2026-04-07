@@ -16,18 +16,18 @@ const HeroSection = () => {
           Security Engineer — New York City
         </motion.p>
 
-        {/* Name — massive editorial serif */}
+        {/* Name */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15 }}
-          className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-normal tracking-tight text-foreground leading-[0.9] mb-8"
+          className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold tracking-tight text-foreground leading-[0.9] mb-8"
         >
           Sapna<br />
-          <span className="italic text-primary">Naidu</span>
+          <span className="font-cursive italic text-primary font-normal">Naidu</span>
         </motion.h1>
 
-        {/* The hook — her voice */}
+        {/* The hook */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -36,7 +36,7 @@ const HeroSection = () => {
         >
           <p className="text-lg md:text-xl text-foreground leading-relaxed mb-2">
             I build systems that work — and solve security problems by{" "}
-            <em className="font-display italic text-primary">removing what doesn't need to exist.</em>
+            <span className="font-cursive italic text-primary text-xl md:text-2xl">removing what doesn't need to exist.</span>
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed">
             Most people add layers. I remove them. That's been my philosophy since I jailbroke my first iPad at 14.

@@ -8,23 +8,28 @@ const beliefs = [
   },
   {
     number: "02",
-    title: "First principles, always.",
-    body: "I don't apply frameworks blindly — I understand why they exist and when they don't fit. The best solution often isn't the textbook one.",
+    title: "Security is a leadership function.",
+    body: "Tools don't create safety. Trust, understanding, and structure do. Cybersecurity isn't a technical checkbox — it's a culture you build through clarity and alignment. Systems break at the point where alignment ends.",
   },
   {
     number: "03",
-    title: "Security should be invisible.",
-    body: "If people route around your security, your security doesn't work. I build controls that make people's jobs easier, not harder.",
+    title: "Build systems people actually follow.",
+    body: "If a system is too complicated to follow, it will never be followed at all. I simplify until the right action becomes the easiest action to take. Security should feel like part of doing the job correctly, not an additional chore.",
   },
   {
     number: "04",
-    title: "Own the gap.",
-    body: "Nobody told me to redesign our CI/CD security or mentor the team on threat modeling. I saw the gap, and I filled it. Extreme ownership isn't a buzzword — it's how I work.",
+    title: "Trust is the architecture.",
+    body: "You can't control outcomes and develop people at the same time. I lead by building trust, not dependence. The moment a team performs for a leader's comfort instead of the mission's success, culture starts to collapse.",
   },
   {
     number: "05",
+    title: "Own the gap.",
+    body: "Nobody told me to redesign our CI/CD security or mentor the team on threat modeling. I saw the gap, and I filled it. Extreme ownership isn't a buzzword — it's how I operate every single day.",
+  },
+  {
+    number: "06",
     title: "Best idea wins.",
-    body: "Even when it's not mine. I've gotten better at setting my ego aside when someone has a sharper solution. That's not weakness — that's how you ship great work.",
+    body: "Even when it's not mine. I've gotten better at setting my ego aside when someone has a sharper solution. That's not weakness — that's how you ship work that actually matters.",
   },
 ];
 
@@ -44,10 +49,21 @@ const PhilosophySection = () => (
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="font-display text-4xl md:text-5xl italic text-foreground mb-16 leading-tight"
+        className="font-display text-4xl md:text-5xl text-foreground mb-6 leading-tight"
       >
-        Five things I'll never<br className="hidden sm:block" /> compromise on.
+        Things I'll <span className="font-cursive italic text-primary">never</span> compromise on.
       </motion.h2>
+
+      <motion.p
+        initial={{ opacity: 0, y: 15 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.1 }}
+        className="text-muted-foreground text-[15px] leading-relaxed mb-16 max-w-xl"
+      >
+        Security isn't a feature you bolt on after the fact. It must be designed in from the start — 
+        embedded into every process, product, and decision. These are the principles that guide how I work.
+      </motion.p>
 
       <div className="space-y-12">
         {beliefs.map((belief, i) => (

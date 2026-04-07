@@ -16,9 +16,9 @@ const StorySection = () => (
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="font-display text-4xl md:text-5xl italic text-foreground mb-12 leading-tight"
+        className="font-display text-4xl md:text-5xl text-foreground mb-12 leading-tight"
       >
-        When I was 14, I jailbroke my iPad&nbsp;3.
+        When I was 14, I jailbroke my <span className="font-cursive italic text-primary">iPad&nbsp;3.</span>
       </motion.h2>
 
       <div className="grid md:grid-cols-[1fr_1.2fr] gap-12 md:gap-16">
@@ -52,7 +52,8 @@ const StorySection = () => (
           <p className="text-foreground leading-[1.8] text-[15px] font-medium">
             That's when I doubled down. Now I don't just build things that work — I build 
             things that protect data from day one. I treat security as an architecture 
-            problem, not a compliance one.
+            problem, not a compliance one. Because people cannot follow what they do not understand, 
+            and they will not protect what they do not feel responsible for.
           </p>
         </motion.div>
       </div>

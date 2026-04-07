@@ -81,7 +81,7 @@ const ExperienceSection = () => (
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="font-display text-4xl md:text-5xl italic text-foreground mb-16 leading-tight"
+        className="font-display text-4xl md:text-5xl text-foreground mb-16 leading-tight"
       >
         Experience
       </motion.h2>
@@ -96,7 +96,7 @@ const ExperienceSection = () => (
             transition={{ delay: i * 0.1 }}
           >
             <div className="flex items-baseline justify-between mb-1">
-              <h3 className="font-display text-2xl italic text-foreground">{exp.company}</h3>
+              <h3 className="font-display text-2xl text-foreground">{exp.company}</h3>
               <span className="text-xs text-muted-foreground hidden sm:block">{exp.location}</span>
             </div>
             <div className="h-px bg-border mb-6" />
@@ -133,8 +133,8 @@ const ExperienceSection = () => (
         <motion.p className="font-mono text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
           Education
         </motion.p>
-        <motion.h2 className="font-display text-4xl md:text-5xl italic text-foreground mb-12 leading-tight">
-          Where I learned
+        <motion.h2 className="font-display text-4xl md:text-5xl text-foreground mb-12 leading-tight">
+          Where I <span className="font-cursive italic text-primary">learned</span>
         </motion.h2>
 
         <div className="space-y-8">

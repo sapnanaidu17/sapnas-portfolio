@@ -17,9 +17,9 @@ const ContactSection = () => (
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="font-display text-4xl md:text-5xl italic text-foreground mb-4 leading-tight"
+        className="font-display text-4xl md:text-5xl text-foreground mb-4 leading-tight"
       >
-        Let's build something<br className="hidden sm:block" /> worth protecting.
+        Let's build something<br className="hidden sm:block" /> worth <span className="font-cursive italic text-primary">protecting.</span>
       </motion.h2>
 
       <motion.p
