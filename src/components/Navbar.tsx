@@ -3,10 +3,10 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
-  { label: "About", href: "#about" },
+  { label: "Story", href: "#story" },
   { label: "Experience", href: "#experience" },
-  { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
+  { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -26,17 +26,17 @@ const Navbar = () => {
         scrolled ? "bg-background/80 backdrop-blur-md border-b border-border" : ""
       }`}
     >
-      <div className="max-w-2xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="font-display text-base font-semibold text-foreground">
+      <div className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="#" className="font-display text-xl italic text-foreground">
           SN
         </a>
 
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-7">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+              className="text-xs tracking-wide text-muted-foreground hover:text-foreground transition-colors"
             >
               {link.label}
             </a>
