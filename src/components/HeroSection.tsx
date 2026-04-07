@@ -4,7 +4,7 @@ import { ArrowDown } from "lucide-react";
 const HeroSection = () => {
   return (
     <section className="min-h-screen flex flex-col justify-center px-6 pt-24 pb-16 relative">
-      <div className="max-w-3xl mx-auto w-full">
+      <div className="max-w-3xl mx-auto w-full flex flex-col items-center text-center">
         
         {/* Editorial overline */}
         <motion.p
@@ -15,7 +15,7 @@ const HeroSection = () => {
         >
           Security Engineer — New York City
         </motion.p>
-
+ 
         {/* Name */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -26,29 +26,29 @@ const HeroSection = () => {
           Sapna<br />
           <span className="font-cursive italic text-primary font-normal">Naidu</span>
         </motion.h1>
-
+ 
         {/* The hook */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="max-w-xl"
+          className="max-w-xl mx-auto"
         >
           <p className="text-lg md:text-xl text-foreground leading-relaxed mb-2">
-            I build systems that work — and solve security problems by{" "}
-            <span className="font-cursive italic text-primary text-xl md:text-2xl">removing what doesn't need to exist.</span>
+            I build systems that work, and{" "}
+            <span className="font-cursive italic text-primary text-xl md:text-2xl">give attackers a run for their money.</span>
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed">
             Most people add layers. I remove them. That's been my philosophy since I jailbroke my first iPad at 14.
           </p>
         </motion.div>
-
+ 
         {/* CTA */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7 }}
-          className="flex gap-4 mt-10 flex-wrap"
+          className="flex gap-4 mt-10 flex-wrap justify-center"
         >
           <a
             href="#story"
@@ -60,7 +60,7 @@ const HeroSection = () => {
             href="mailto:sapnanaidu1709@gmail.com"
             className="text-sm font-medium px-7 py-3 rounded-full border border-border text-foreground hover:bg-card transition-all duration-200"
           >
-            Let's talk
+            Email
           </a>
         </motion.div>
       </div>

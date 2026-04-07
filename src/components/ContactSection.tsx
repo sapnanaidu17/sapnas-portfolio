@@ -45,7 +45,7 @@ const ContactSection = () => (
           className="text-sm font-medium px-7 py-3 rounded-full bg-foreground text-background hover:opacity-90 transition-all duration-200 flex items-center gap-2"
         >
           <Mail className="w-4 h-4" />
-          sapnanaidu1709@gmail.com
+          Email
         </a>
 
         <a
@@ -59,7 +59,7 @@ const ContactSection = () => (
         </a>
 
         <a
-          href="https://github.com"
+          href="https://github.com/sapnanaidu17"
           target="_blank"
           rel="noopener noreferrer"
           className="text-sm font-medium px-6 py-3 rounded-full border border-border text-foreground hover:bg-card transition-all duration-200 flex items-center gap-2"
