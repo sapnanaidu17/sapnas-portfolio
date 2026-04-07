@@ -21,9 +21,9 @@ const CertificationsSection = () => (
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="font-display text-4xl md:text-5xl italic text-foreground mb-12 leading-tight"
+        className="font-display text-4xl md:text-5xl text-foreground mb-12 leading-tight"
       >
-        The receipts.
+        The <span className="font-cursive italic text-primary">receipts.</span>
       </motion.h2>
 
       <div className="space-y-6">

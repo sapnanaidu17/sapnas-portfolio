@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -81,12 +81,6 @@ html {
   display: none;
 }
 
-/* Stagger entrance animations */
-@keyframes slide-up {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 /* Typewriter cursor blink */
 @keyframes blink {
   0%, 100% { opacity: 1; }
@@ -109,7 +103,7 @@ html {
   position: absolute;
   top: -0.3em;
   left: -0.15em;
-  font-family: 'Instrument Serif', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 6rem;
   color: hsl(var(--primary) / 0.12);
   line-height: 1;

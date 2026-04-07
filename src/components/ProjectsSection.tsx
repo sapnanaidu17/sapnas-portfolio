@@ -33,9 +33,9 @@ const ProjectsSection = () => (
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="font-display text-4xl md:text-5xl italic text-foreground mb-16 leading-tight"
+        className="font-display text-4xl md:text-5xl text-foreground mb-16 leading-tight"
       >
-        Things I've built<br className="hidden sm:block" /> & broken into.
+        Things I've built<br className="hidden sm:block" /> & <span className="font-cursive italic text-primary">broken into.</span>
       </motion.h2>
 
       <div className="space-y-20">
@@ -48,12 +48,11 @@ const ProjectsSection = () => (
             transition={{ delay: i * 0.1 }}
           >
             <p className="font-mono text-xs text-muted-foreground mb-2">{project.context}</p>
-            <h3 className="font-display text-2xl italic text-foreground mb-4">{project.title}</h3>
+            <h3 className="font-display text-2xl text-foreground mb-4">{project.title}</h3>
             <p className="text-muted-foreground text-[15px] leading-[1.8] mb-4">{project.desc}</p>
 
-            {/* Pull-quote insight */}
             <div className="pull-quote pl-6 border-l-2 border-primary/30 mb-6">
-              <p className="text-foreground text-sm italic leading-relaxed">
+              <p className="font-cursive italic text-foreground text-lg leading-relaxed">
                 "{project.insight}"
               </p>
             </div>

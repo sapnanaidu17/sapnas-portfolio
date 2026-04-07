@@ -9,10 +9,10 @@ const AboutSection = () => (
         viewport={{ once: true }}
         className="pull-quote"
       >
-        <blockquote className="font-display text-3xl md:text-4xl italic text-foreground leading-snug max-w-2xl">
-          The degree matters less than what I've built: security programs from scratch, 
-          incident response processes that actually work under pressure, and the ability 
-          to translate vague compliance requirements into concrete technical implementations.
+        <blockquote className="font-display text-2xl md:text-3xl text-foreground leading-snug max-w-2xl">
+          Clarity builds confidence. Confidence builds consistency. 
+          Consistency creates <span className="font-cursive italic text-primary text-3xl md:text-4xl">stability and trust.</span>{" "}
+          In cybersecurity, as in leadership, systems break at the point where alignment ends.
         </blockquote>
       </motion.div>
     </div>

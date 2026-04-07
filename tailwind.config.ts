@@ -12,8 +12,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Instrument Serif", "serif"],
-        body: ["Space Grotesk", "sans-serif"],
+        display: ["Playfair Display", "serif"],
+        body: ["DM Sans", "sans-serif"],
+        cursive: ["Cormorant Garamond", "serif"],
         mono: ["JetBrains Mono", "monospace"],
       },
       colors: {
