@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Linkedin, ExternalLink } from "lucide-react";
+import { Mail, Linkedin } from "lucide-react";
 
 const ContactSection = () => (
   <section id="contact" className="py-24 px-6">
@@ -47,7 +47,7 @@ const ContactSection = () => (
           LinkedIn
         </a>
 
-        <a
+{/* <a
           href="/resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
@@ -55,7 +55,7 @@ const ContactSection = () => (
         >
           <ExternalLink className="w-3.5 h-3.5" />
           View Resume
-        </a>
+        </a> */}
       </motion.div>
     </div>
   </section>
