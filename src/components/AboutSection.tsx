@@ -9,10 +9,10 @@ const AboutSection = () => (
         viewport={{ once: true }}
         className="pull-quote"
       >
-        <blockquote className="font-display text-2xl md:text-3xl text-foreground leading-snug max-w-2xl">
-          Clarity builds confidence. Confidence builds consistency. 
-          Consistency creates <span className="font-cursive italic text-primary text-3xl md:text-4xl">stability and trust.</span>{" "}
-          In cybersecurity, as in leadership, systems break at the point where alignment ends.
+          <blockquote className="font-display text-2xl md:text-3xl text-foreground leading-snug max-w-2xl">
+          Degrees inform, but execution defines. Security programs built from scratch, 
+          incident response that holds under pressure, and the technical vision to turn 
+          vague compliance into <span className="font-cursive italic text-primary text-3xl md:text-4xl">concrete technical reality.</span>
         </blockquote>
       </motion.div>
     </div>

@@ -9,7 +9,7 @@ const beliefs = [
   {
     number: "02",
     title: "Security is a leadership function.",
-    body: "Tools don't create safety. Trust, understanding, and structure do. Cybersecurity isn't a technical checkbox — it's a culture you build through clarity and alignment. Systems break at the point where alignment ends.",
+    body: "Security is more than a technical checkbox; it's a mission you build for. I focus on execution over theory—creating security programs from scratch, building response processes that work under pressure, and translating vague requirements into concrete technical implementations.",
   },
   {
     number: "03",
