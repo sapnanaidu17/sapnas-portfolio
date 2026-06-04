@@ -1,160 +1,136 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 
-const experiences = [
+const jobs = [
   {
-    company: "Averent",
-    location: "New York · Hybrid",
+    company: "Averent", type: "Social media platform startup", location: "NYC",
     roles: [
       {
-        title: "Lead Cybersecurity Engineer",
-        period: "Aug 2025 – Present",
-        highlights: [
-          "Leading application security architecture, threat modeling, and incident response across the org",
-          "Rebuilt CI/CD security from the ground up — didn't patch it, rewired it",
-          "Mentoring engineers on security-first development practices",
+        title: "Lead Cybersecurity Engineer", period: "Aug 2025 – Present",
+        metrics: ["<100ms latency", "1M+ req/day", "99.9% uptime", "50% MTTR ↓", "30% throughput ↑"],
+        bullets: [
+          "Distributed backend in Go + Python — WebRTC P2P messaging at scale",
+          "Built Grafana telemetry pipelines; optimized TCP + HTTP/2 across microservices",
+          "On-call: packet captures, log correlation, protocol-level debugging",
         ],
+        tags: ["Go", "Python", "WebRTC", "TCP/IP", "Grafana", "TLS 1.3", "HTTP/2"],
       },
       {
-        title: "Secure Full Stack Engineer",
-        period: "Jan – Aug 2025",
-        highlights: [
-          "Integrated SAST/DAST into the development pipeline",
-          "Built authentication and authorization controls for web & API security",
-          "Translated compliance requirements into concrete technical implementations",
+        title: "Secure Full-Stack Engineer", period: "Jan – Jul 2025",
+        metrics: ["40% query latency ↓", "full test coverage"],
+        bullets: [
+          "REST APIs with connection pooling and query optimization",
+          "PostgreSQL schema design — 40% query latency reduction",
         ],
+        tags: ["PostgreSQL", "REST APIs", "Docker", "CI/CD"],
       },
     ],
   },
   {
-    company: "Spoole Systems",
-    location: "Bengaluru, India",
+    company: "Spoole Systems", type: "Fintech startup", location: "Bangalore",
     roles: [
       {
-        title: "Information Security Intern",
-        period: "Apr – Jul 2024",
-        highlights: [
-          "Application security support, database encryption, and regulatory compliance",
-          "Implemented RBAC and secure development practices for FinTech systems",
+        title: "Information Security Intern", period: "Feb – May 2024",
+        metrics: ["75+ users secured", "RBI compliant"],
+        bullets: [
+          "Database encryption + RBAC for RBI & IT Act 2000 compliance",
+          "CI/CD pipeline hardening with credential management controls",
         ],
-      },
-      {
-        title: "Sales & Marketing Intern",
-        period: "Feb – May 2024",
-        highlights: [
-          "Market risk analysis and standards compliance",
-        ],
+        tags: ["RBAC", "CI/CD", "Compliance"],
       },
     ],
   },
 ];
 
-const education = [
-  {
-    school: "Pace University",
-    degree: "MS Cybersecurity",
-    detail: "Seidenberg School of CS & IS",
-    grade: "3.9 GPA",
-    period: "2024 – 2026",
-  },
-  {
-    school: "CMR Institute of Technology",
-    degree: "BE Computer Science",
-    detail: "",
-    grade: "8.61 CGPA",
-    period: "2020 – 2024",
-  },
-];
+export default function ExperienceSection() {
+  const [open, setOpen] = useState<string>("Lead Cybersecurity Engineer");
 
-const ExperienceSection = () => (
-  <section id="experience" className="py-28 px-6">
-    <div className="max-w-3xl mx-auto">
-      <motion.p
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        className="font-mono text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4"
-      >
-        Where I've been
-      </motion.p>
+  return (
+    <section id="experience" className="py-20 px-6 bg-card/40">
+      <div className="max-w-5xl mx-auto">
+        <motion.div initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12">
+          <div className="flex items-center gap-3 mb-2">
+            <div className="accent-line" />
+            <span className="font-mono text-xs tracking-widest text-primary uppercase">Experience</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">Where I've shipped.</h2>
+        </motion.div>
 
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="font-display text-4xl md:text-5xl text-foreground mb-16 leading-tight"
-      >
-        Experience
-      </motion.h2>
-
-      <div className="space-y-16">
-        {experiences.map((exp, i) => (
-          <motion.div
-            key={exp.company}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-          >
-            <div className="flex items-baseline justify-between mb-1">
-              <h3 className="font-display text-2xl text-foreground">{exp.company}</h3>
-              <span className="text-xs text-muted-foreground hidden sm:block">{exp.location}</span>
-            </div>
-            <div className="h-px bg-border mb-6" />
-
-            <div className="space-y-8 pl-0 md:pl-6">
-              {exp.roles.map((role) => (
-                <div key={role.title}>
-                  <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-3">
-                    <p className="text-[15px] font-semibold text-foreground">{role.title}</p>
-                    <p className="font-mono text-xs text-muted-foreground">{role.period}</p>
-                  </div>
-                  <ul className="space-y-1.5">
-                    {role.highlights.map((h, j) => (
-                      <li key={j} className="text-sm text-muted-foreground leading-relaxed flex gap-2">
-                        <span className="text-primary mt-1 shrink-0">›</span>
-                        <span>{h}</span>
-                      </li>
-                    ))}
-                  </ul>
+        <div className="space-y-10">
+          {jobs.map((job, ji) => (
+            <motion.div key={job.company}
+              initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: ji * 0.1 }}>
+              {/* Company header */}
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-2 h-2 rounded-full bg-primary shrink-0 mt-0.5" />
+                <div>
+                  <span className="font-bold text-foreground text-lg">{job.company}</span>
+                  <span className="text-muted-foreground text-sm ml-2">· {job.type} · {job.location}</span>
                 </div>
-              ))}
-            </div>
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Education */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="mt-24"
-      >
-        <motion.p className="font-mono text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
-          Education
-        </motion.p>
-        <motion.h2 className="font-display text-4xl md:text-5xl text-foreground mb-12 leading-tight">
-          Where I <span className="font-cursive italic text-primary">learned</span>
-        </motion.h2>
-
-        <div className="space-y-8">
-          {education.map((edu) => (
-            <div key={edu.school} className="grid grid-cols-[1fr_auto] gap-4 items-start">
-              <div>
-                <p className="font-semibold text-foreground text-[15px]">{edu.degree}</p>
-                <p className="text-sm text-muted-foreground">{edu.school}</p>
-                {edu.detail && <p className="text-xs text-muted-foreground mt-0.5">{edu.detail}</p>}
               </div>
-              <div className="text-right">
-                <p className="text-sm font-medium text-primary">{edu.grade}</p>
-                <p className="font-mono text-xs text-muted-foreground">{edu.period}</p>
+
+              <div className="ml-5 pl-5 border-l-2 border-border space-y-3">
+                {job.roles.map(role => {
+                  const isOpen = open === role.title;
+                  return (
+                    <div key={role.title} className="rounded-2xl border border-border bg-white card-hover overflow-hidden">
+                      <button onClick={() => setOpen(isOpen ? "" : role.title)}
+                        className="w-full px-5 py-4 flex items-start justify-between text-left gap-3">
+                        <div className="flex-1 min-w-0">
+                          <p className="font-semibold text-foreground text-sm">{role.title}</p>
+                          <p className="font-mono text-xs text-muted-foreground mt-0.5">{role.period}</p>
+                          {/* Metric badges — always visible */}
+                          <div className="flex flex-wrap gap-1.5 mt-3">
+                            {role.metrics.map((m, mi) => (
+                              <span key={m} className={`metric-badge ${mi % 2 === 1 ? "spark" : ""}`}>{m}</span>
+                            ))}
+                          </div>
+                        </div>
+                        <ChevronDown className={`w-4 h-4 text-muted-foreground shrink-0 mt-1 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+                      </button>
+
+                      <AnimatePresence initial={false}>
+                        {isOpen && (
+                          <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.22 }} className="overflow-hidden">
+                            <div className="px-5 pb-5 border-t border-border pt-4">
+                              <ul className="space-y-1.5 mb-4">
+                                {role.bullets.map((b, i) => (
+                                  <li key={i} className="flex gap-2 text-sm text-muted-foreground">
+                                    <span className="text-primary shrink-0">›</span><span>{b}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                              <div className="flex flex-wrap gap-1.5">
+                                {role.tags.map(t => <span key={t} className="tag">{t}</span>)}
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                })}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </motion.div>
-    </div>
-  </section>
-);
 
-export default ExperienceSection;
+        {/* Education strip */}
+        <motion.div initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-14 grid sm:grid-cols-2 gap-4">
+          {[
+            { school: "Pace University", degree: "MS Cybersecurity", note: "Merit Scholar · 3.9 GPA · 2024–2026", loc: "New York" },
+            { school: "CMR Institute of Technology", degree: "BEng Information Science", note: "8.61 GPA · 2020–2024", loc: "Bangalore" },
+          ].map(e => (
+            <div key={e.school} className="bg-white border border-border rounded-2xl p-5 card-hover">
+              <p className="font-bold text-foreground">{e.degree}</p>
+              <p className="text-sm text-muted-foreground">{e.school} · {e.loc}</p>
+              <p className="font-mono text-xs text-primary mt-1.5">{e.note}</p>
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}

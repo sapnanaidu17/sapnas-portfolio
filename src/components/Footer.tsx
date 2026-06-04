@@ -1,14 +1,12 @@
-const Footer = () => (
-  <footer className="py-10 px-6 border-t border-border">
-    <div className="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p className="text-xs text-muted-foreground">
-        © 2026 Sapna Naidu · Built with conviction, not templates.
-      </p>
-      <p className="font-mono text-[10px] text-muted-foreground/50 tracking-wider uppercase">
-        New York City
-      </p>
-    </div>
-  </footer>
-);
-
-export default Footer;
+export default function Footer() {
+  return (
+    <footer className="py-8 px-6 border-t border-border">
+      <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+        <span className="font-mono text-xs text-muted-foreground">
+          Sapna Naidu · <span className="text-primary">Software Engineer, Realtime</span>
+        </span>
+        <span className="font-mono text-xs text-muted-foreground/40">NYC · 2026 ✦</span>
+      </div>
+    </footer>
+  );
+}

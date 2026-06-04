@@ -3,7 +3,6 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
-  { label: "Story", href: "#story" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
@@ -26,17 +25,17 @@ const Navbar = () => {
         scrolled ? "bg-background/80 backdrop-blur-md border-b border-border" : ""
       }`}
     >
-      <div className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="font-cursive text-2xl italic text-foreground">
-          SN
+      <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="#" className="font-mono text-sm font-bold text-foreground hover:text-primary transition-colors">
+          SN<span className="text-primary">_</span>
         </a>
 
-        <div className="hidden md:flex items-center gap-7">
+        <div className="hidden md:flex items-center gap-8">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-xs tracking-wide text-muted-foreground hover:text-foreground transition-colors"
+              className="font-mono text-xs tracking-wide text-muted-foreground hover:text-foreground transition-colors"
             >
               {link.label}
             </a>
@@ -61,7 +60,7 @@ const Navbar = () => {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="block font-mono text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 {link.label}
               </a>
